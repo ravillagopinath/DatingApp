@@ -10,3 +10,18 @@ public class AppUser
 
     
 }
+
+
+
+
+// Use DatingAppdb;
+
+// INSERT INTO Users (Id, DisplayName, Email)
+// VALUES
+// (NEWID(), 'Gopi', 'gopi@example.com'),
+// (NEWID(), 'Ravi', 'ravi@example.com'),
+// (NEWID(), 'Sita', 'sita@example.com'),
+// (NEWID(), 'Kiran', 'kiran@example.com'),
+// (NEWID(), 'Priya', 'priya@example.com');
+
+// select * from users;
