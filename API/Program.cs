@@ -11,21 +11,19 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-// // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-// builder.Services.AddOpenApi();
 
+builder.Services.AddCors();
+// builder.Services.AddCors(options =>
+// {
+//     options.AddPolicy("CorsPolicy", policy =>
+//     {
+//         policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200","https://localhost:4200");
+//     });
+// });
 var app = builder.Build();
 
-// // Configure the HTTP request pipeline.
-// if (app.Environment.IsDevelopment())
-// {
-//     app.MapOpenApi();
-// }
-
-// app.UseHttpsRedirection();
-
-// app.UseAuthorization();
-
+app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod()
+.WithOrigins("http://localhost:4200","https://localhost:4200"));
 app.MapControllers();
 
 app.Run();
