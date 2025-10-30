@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    [Route("api/[controller]")]   //Localhost:5001/api/members
-    [ApiController]
-      public class MembersController(AppDbContext context) : ControllerBase
+    // [Route("api/[controller]")]   //Localhost:5001/api/members
+    // [ApiController]
+      public class MembersController(AppDbContext context) : BaseApiController
     {
         [HttpGet]
         public async Task< ActionResult<IReadOnlyList<AppUser>>> GetMembers()
